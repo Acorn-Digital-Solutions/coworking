@@ -2907,6 +2907,13 @@ input, select, textarea {
 		text-align: center;
 	}
 
+	div > ul.features-list {
+		font-style: italic;
+		list-style: none; 
+		padding-left: 0; 
+		margin: 0;
+	}
+
 	header {
 		cursor: default;
 	}
