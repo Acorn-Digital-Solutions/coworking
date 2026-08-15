@@ -11,6 +11,76 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			body {
+				background: #f4f2f0;
+			}
+			#wrapper {
+				max-width: 1200px;
+				margin: 0 auto;
+				background: rgba(255,255,255,0.12);
+				padding: 2rem 0 0;
+			}
+			#intro {
+				padding: 4rem 2rem 2rem;
+				text-align: center;
+			}
+			#intro h1 {
+				font-size: clamp(2.2rem, 3vw, 3.8rem);
+				letter-spacing: 0.04em;
+				text-transform: uppercase;
+				margin-bottom: 1.5rem;
+			}
+			#intro p {
+				font-size: clamp(1.2rem, 1.8vw, 2rem);
+				font-weight: 300;
+				line-height: 1.5;
+				max-width: 900px;
+				margin: 0 auto;
+			}
+			#intro .subhead {
+				font-style: italic;
+				color: rgba(20, 28, 31, 0.75);
+			}
+			.features-wrap {
+				max-width: 980px;
+				margin: 5rem auto 0;
+				padding: 0 2rem 4rem;
+			}
+			.features-heading {
+				text-align: center;
+				font-size: clamp(1.8rem, 2.5vw, 3rem);
+				letter-spacing: 0.12em;
+				text-transform: uppercase;
+				margin-bottom: 2.5rem;
+			}
+			.features-grid {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				gap: 1rem 3rem;
+				max-width: 760px;
+				margin: 0 auto;
+			}
+			.feature-item {
+				font-size: clamp(1.15rem, 1.6vw, 2rem);
+				font-weight: 300;
+				line-height: 1.6;
+				color: #1f2d33;
+				padding-left: 0.75rem;
+				border-left: 2px solid rgba(31,45,51,0.2);
+			}
+			@media screen and (max-width: 768px) {
+				.features-grid {
+					grid-template-columns: 1fr;
+					gap: 0.8rem;
+				}
+				.feature-item {
+					padding-left: 0;
+					border-left: 0;
+					text-align: center;
+				}
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -20,13 +90,10 @@
 				<!-- Intro -->
 					<div id="intro">
 						<h1>Anchor Workspaces</h1>
-						<p>Shared office space coming soon to Royal Wharf<br />
-						<a href="https://html5up.net/license">Register your interest</a></p>
-						<ul class="actions">
-							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
-						</ul>
-					</div>
-
+							<p><strong>Convenient, local, shared working space.</strong></p>
+							<p class="subhead">Anchor Workspaces is a fully equipped, modern shared office space in the heart of Royal Wharf.</p>
+							<ul class="actions">
+								<li><a href="#register" class="button scrolly">Register your interest</a></li>
 				<!-- Header -->
 					<header id="header">
 						<a href="index.html" class="logo">Anchor Workspaces</a>
@@ -34,9 +101,6 @@
 
 				<!-- Nav -->
 					<nav id="nav">
-						<ul class="links">
-							<li class="active"><a href="index.html">Anchor Workspaces</a></li>
-						</ul>
 						<ul class="icons">
 							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
@@ -47,22 +111,42 @@
 
 				<!-- Main -->
 					<div id="main">
-
-						<!-- Featured Post -->
-							<article class="post featured">
-								<header class="major">
-									<span class="date">April 25, 2017</span>
-									<h2><a href="#">And this is a<br />
-									massive headline</a></h2>
-									<p>Aenean ornare velit lacus varius enim ullamcorper proin aliquam<br />
-									facilisis ante sed etiam magna interdum congue. Lorem ipsum dolor<br />
-									amet nullam sed etiam veroeros.</p>
-								</header>
-								<a href="#" class="image main"><img src="images/pic01.jpg" alt="" /></a>
-								<ul class="actions special">
-									<li><a href="#" class="button large">Full Story</a></li>
+						<article class="post featured">
+							<header class="major">
+								<h4><a href="#">Convenient, local, shared working space.<br />
+								</a></h4>
+								<p>Anchor Workspaces will be a fully equiped, modern, shared office space in the heart of Royal Wharf<br />
+								<br />								
+								</p>
+							</header>
+							<div class="features-wrap">
+								<h3 class="features-heading">Features</h3>
+								<div class="features-grid">
+									<div class="feature-item">Air conditioning</div>
+									<div class="feature-item">Tea, coffee &amp; snacks</div>
+									<div class="feature-item">Comfortable desks and ergonomic chairs</div>
+									<div class="feature-item">Private working booths</div>
+									<div class="feature-item">Conference rooms</div>
+									<div class="feature-item">A productive, welcoming community</div>
+								</div>
+							</div>							
+						</article>
+						
+						<section id="register">
+							<form method="post" action="#">
+								<div class="fields">
+									<div class="field">
+										<label for="email">Register your interest</label>
+										<input type="text" name="email" id="email" placeholder="Email Address"/>
+									</div>									
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Submit" /></li>
 								</ul>
-							</article>
+							</form>
+						</section>
+						<!-- Featured Post -->
+							
 
 						<!-- Posts -->
 							<section class="posts">
@@ -90,69 +174,10 @@
 										<li><a href="#" class="button">Full Story</a></li>
 									</ul>
 								</article>
-								<article>
-									<header>
-										<span class="date">April 18, 2017</span>
-										<h2><a href="#">Ante mattis<br />
-										interdum dolor</a></h2>
-									</header>
-									<a href="#" class="image fit"><img src="images/pic04.jpg" alt="" /></a>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
-									<ul class="actions special">
-										<li><a href="#" class="button">Full Story</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<span class="date">April 14, 2017</span>
-										<h2><a href="#">Tempus sed<br />
-										nulla imperdiet</a></h2>
-									</header>
-									<a href="#" class="image fit"><img src="images/pic05.jpg" alt="" /></a>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
-									<ul class="actions special">
-										<li><a href="#" class="button">Full Story</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<span class="date">April 11, 2017</span>
-										<h2><a href="#">Odio magna<br />
-										sed consectetur</a></h2>
-									</header>
-									<a href="#" class="image fit"><img src="images/pic06.jpg" alt="" /></a>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
-									<ul class="actions special">
-										<li><a href="#" class="button">Full Story</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<span class="date">April 7, 2017</span>
-										<h2><a href="#">Augue lorem<br />
-										primis vestibulum</a></h2>
-									</header>
-									<a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis magna etiam.</p>
-									<ul class="actions special">
-										<li><a href="#" class="button">Full Story</a></li>
-									</ul>
-								</article>
 							</section>
 
 						<!-- Footer -->
-							<footer>
-								<div class="pagination">
-									<!--<a href="#" class="previous">Prev</a>-->
-									<a href="#" class="page active">1</a>
-									<a href="#" class="page">2</a>
-									<a href="#" class="page">3</a>
-									<span class="extra">&hellip;</span>
-									<a href="#" class="page">8</a>
-									<a href="#" class="page">9</a>
-									<a href="#" class="page">10</a>
-									<a href="#" class="next">Next</a>
-								</div>
+							<footer>								
 							</footer>
 
 					</div>
