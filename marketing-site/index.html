@@ -11,6 +11,59 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			#interestPopupOverlay {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: rgba(0, 0, 0, 0.6);
+				display: none;
+				align-items: center;
+				justify-content: center;
+				z-index: 10000;
+				opacity: 0;
+				transition: opacity 0.4s ease;
+			}
+			#interestPopupOverlay.is-visible {
+				display: flex;
+				opacity: 1;
+			}
+			#interestPopup {
+				position: relative;
+				background: #fff;
+				color: #242943;
+				max-width: 30rem;
+				width: 90%;
+				padding: 2.5rem 2rem;
+				border-radius: 6px;
+				box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+				text-align: center;
+			}
+			#interestPopup h3 {
+				margin: 0 0 0.75rem 0;
+			}
+			#interestPopup p {
+				margin: 0 0 1.5rem 0;
+			}
+			#interestPopup input[type="email"] {
+				width: 100%;
+				margin-bottom: 1rem;
+			}
+			#interestPopupClose {
+				position: absolute;
+				top: 0.5rem;
+				right: 0.9rem;
+				font-size: 1.6rem;
+				line-height: 1;
+				color: #242943;
+				text-decoration: none;
+				cursor: pointer;
+				border: 0;
+				background: transparent;
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -95,6 +148,21 @@
 							</form>
 						</section>
 					</div>
+			</div>
+
+		<!-- Interest Popup -->
+			<div id="interestPopupOverlay">
+				<div id="interestPopup" role="dialog" aria-modal="true" aria-labelledby="interestPopupTitle">
+					<button id="interestPopupClose" aria-label="Close">&times;</button>
+					<h3 id="interestPopupTitle">Register your interest</h3>
+					<p>Anchor Workspaces is coming soon to Royal Wharf. Leave your email and be the first to know when we open.</p>
+					<form id="interestPopupForm" method="post" action="#">
+						<input type="email" name="email" placeholder="Email Address" required />
+						<ul class="actions" style="justify-content: center;">
+							<li><input type="submit" value="Register" /></li>
+						</ul>
+					</form>
+				</div>
 			</div>
 
 		<!-- Scripts -->

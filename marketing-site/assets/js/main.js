@@ -255,4 +255,48 @@
 
 		}
 
+	// Interest Popup.
+		var $interestOverlay = $('#interestPopupOverlay');
+
+		if ($interestOverlay.length > 0) {
+
+			var interestPopupShown = false,
+				openInterestPopup = function() {
+					if (interestPopupShown)
+						return;
+
+					interestPopupShown = true;
+					$interestOverlay.addClass('is-visible');
+				},
+				closeInterestPopup = function() {
+					$interestOverlay.removeClass('is-visible');
+				};
+
+			// Show after 5 seconds.
+				window.setTimeout(openInterestPopup, 5000);
+
+			// Close on button click.
+				$('#interestPopupClose').on('click', closeInterestPopup);
+
+			// Close when clicking the backdrop.
+				$interestOverlay.on('click', function(event) {
+					if (event.target === this)
+						closeInterestPopup();
+				});
+
+			// Close on Escape.
+				$window.on('keydown', function(event) {
+					if (event.key === 'Escape')
+						closeInterestPopup();
+				});
+
+			// Handle submit.
+				$('#interestPopupForm').on('submit', function(event) {
+					event.preventDefault();
+					$('#interestPopup').html('<h3>Thank you!</h3><p>We\'ll be in touch soon.</p>');
+					window.setTimeout(closeInterestPopup, 2000);
+				});
+
+		}
+
 })(jQuery);
