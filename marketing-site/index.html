@@ -11,59 +11,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<style>
-			#interestPopupOverlay {
-				position: fixed;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-				background: rgba(0, 0, 0, 0.6);
-				display: none;
-				align-items: center;
-				justify-content: center;
-				z-index: 10000;
-				opacity: 0;
-				transition: opacity 0.4s ease;
-			}
-			#interestPopupOverlay.is-visible {
-				display: flex;
-				opacity: 1;
-			}
-			#interestPopup {
-				position: relative;
-				background: #fff;
-				color: #242943;
-				max-width: 30rem;
-				width: 90%;
-				padding: 2.5rem 2rem;
-				border-radius: 6px;
-				box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-				text-align: center;
-			}
-			#interestPopup h3 {
-				margin: 0 0 0.75rem 0;
-			}
-			#interestPopup p {
-				margin: 0 0 1.5rem 0;
-			}
-			#interestPopup input[type="email"] {
-				width: 100%;
-				margin-bottom: 1rem;
-			}
-			#interestPopupClose {
-				position: absolute;
-				top: 0.5rem;
-				right: 0.9rem;
-				font-size: 1.6rem;
-				line-height: 1;
-				color: #242943;
-				text-decoration: none;
-				cursor: pointer;
-				border: 0;
-				background: transparent;
-			}
-		</style>
 	</head>
 	<body class="is-preload">
 
@@ -100,9 +47,9 @@
 						<article class="post featured">
 							<div class="major">
 								<h3><a href="#register">Conveniently local work space</a></h3>
-								<p class="center">Anchor Workspaces is a modern, fully equipped coworking space in the heart of Royal Wharf. 
+								<p class="center">Anchor Workspaces is a modern, fully equipped coworking space in the heart of Royal Wharf.
 									</br> Designed for productivity, focus and connection.
-								</p>								
+								</p>
 							</div>
 							<div class="row">
 								<div class="col-12">
@@ -117,13 +64,13 @@
 										<li>Pet friendly</li>
 									</ul>
 								</div>
-							</div>						
+							</div>
 						</article>
 						<section id="survey">
 							<h3>Flexible Memberships</h3>
 							<p>We will offers maximum flexibility with a range of membership options,
 							so you only pay for what you need.</p>
-							
+
 							<h4>Membership Types</h4>
 							<ul>
 								<li>Day Pass</li>
@@ -140,7 +87,7 @@
 									<div class="field">
 										<h3 for="email">Register your interest</h3>
 										<input type="text" name="email" id="email" placeholder="Email Address"/>
-									</div>									
+									</div>
 								</div>
 								<ul class="actions">
 									<li><input type="submit" value="Submit" /></li>
@@ -155,10 +102,11 @@
 				<div id="interestPopup" role="dialog" aria-modal="true" aria-labelledby="interestPopupTitle">
 					<button id="interestPopupClose" aria-label="Close">&times;</button>
 					<h3 id="interestPopupTitle">Register your interest</h3>
-					<p>Anchor Workspaces is coming soon to Royal Wharf. Leave your email and be the first to know when we open.</p>
+					<p>Anchor Workspaces is coming soon to Royal Wharf. Leave your email and be the first to know when we open.</br>
+					Even better, <a href="#">take our two minutes survey</a> for a discounted membership.</p>
 					<form id="interestPopupForm" method="post" action="#">
 						<input type="email" name="email" placeholder="Email Address" required />
-						<ul class="actions" style="justify-content: center;">
+						<ul class="actions">
 							<li><input type="submit" value="Register" /></li>
 						</ul>
 					</form>

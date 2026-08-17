@@ -260,20 +260,35 @@
 
 		if ($interestOverlay.length > 0) {
 
-			var interestPopupShown = false,
+			var interestPopupKey = 'anchorInterestPopupSeen',
+				interestPopupSeen = function() {
+					try {
+						return window.localStorage.getItem(interestPopupKey) === '1';
+					} catch (e) {
+						return false;
+					}
+				},
+				markInterestPopupSeen = function() {
+					try {
+						window.localStorage.setItem(interestPopupKey, '1');
+					} catch (e) {}
+				},
+				interestPopupShown = false,
 				openInterestPopup = function() {
-					if (interestPopupShown)
+					if (interestPopupShown || interestPopupSeen())
 						return;
 
 					interestPopupShown = true;
+					markInterestPopupSeen();
 					$interestOverlay.addClass('is-visible');
 				},
 				closeInterestPopup = function() {
 					$interestOverlay.removeClass('is-visible');
 				};
 
-			// Show after 5 seconds.
-				window.setTimeout(openInterestPopup, 5000);
+			// Show after 5 seconds (once per visitor).
+				if (!interestPopupSeen())
+					window.setTimeout(openInterestPopup, 5000);
 
 			// Close on button click.
 				$('#interestPopupClose').on('click', closeInterestPopup);
