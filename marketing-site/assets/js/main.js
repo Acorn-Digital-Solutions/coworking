@@ -268,18 +268,7 @@
 						return false;
 					}
 				},
-				markInterestPopupSeen = function() {
-					try {
-						window.localStorage.setItem(interestPopupKey, '1');
-					} catch (e) {}
-				},
-				interestPopupShown = false,
 				openInterestPopup = function() {
-					if (interestPopupShown || interestPopupSeen())
-						return;
-
-					interestPopupShown = true;
-					markInterestPopupSeen();
 					$interestOverlay.addClass('is-visible');
 				},
 				closeInterestPopup = function() {
@@ -287,8 +276,9 @@
 				};
 
 			// Show after 5 seconds (once per visitor).
-				if (!interestPopupSeen())
+				if (!interestPopupSeen()) {
 					window.setTimeout(openInterestPopup, 5000);
+				}
 
 			// Close on button click.
 				$('#interestPopupClose').on('click', closeInterestPopup);
